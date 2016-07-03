@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link data-require="bootstrap@3.3.5" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link data-require="bootstrap@3.3.5" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css" />
+    <link data-require="bootstrap@3.3.5" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.5.8" src="https://code.angularjs.org/1.4.9/angular.js" data-semver="1.4.9"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="container">
+      <div class="form-group">
+        <label>keyword</label>
+        <input ng-model="keyword" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>continent</label>
+        <select ng-model="continent" ng-options="c for c in continents" class="form-control"></select>
+      </div>
+      <table class="table table-condensed">
+        <tbody>
+          <tr ng-repeat="country in countries">
+            <td>{{country.continent}}</td>
+            <td>{{country.countryName}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" ng-click="loadMore()" class="btn btn-default">loadMore</button>
+    </div>
+
+  </body>
+
+</html>
